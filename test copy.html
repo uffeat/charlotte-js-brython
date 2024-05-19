@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="./libs/brython/brython.js"></script>
+		<script type="text/javascript" src="./libs/brython/brython_stdlib.js"></script>
+    
+    <title>Test</title>
+  </head>
+
+  <body onload="brython(1)">
+    <script type="text/python">
+from browser import window
+
+window.console.log('Hi!')
+
+text = """
+def main(number):
+  print('RUNNING')
+  result = 2 * number
+  return result
+""""
+exec_locals = {}
+exec(text, {}, exec_locals)
+main = exec_locals['main']
+result = main(21)
+window.console.log(f"result: {result}")
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="./libs/brython/brython.js"></script>
+    <script
+      type="text/javascript"
+      src="./libs/brython/brython_stdlib.js"
+    ></script>
+
+    <title>Test</title>
+  </head>
+
+  <body onload="brython(1)">
+    <script type="text/python">
+      from browser import console
+
+      code = """console.log('Yo!')
+      console.log('Hey!')
+      """
+      exec(code)
+
+      console.log('Hi!')
+    </script>
+
+		<script type="module">
+			const code = `
+			def stuff():
+			  return 42
+			`
+			window.BRYTHON.py2js(code).to_js()
+
+
+
+		</script>
+  </body>
+</html>
